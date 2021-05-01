@@ -17,6 +17,8 @@
   "license": "MIT",
   "dependencies": {
     "@hapi/hapi": "^20.1.2",
+    "fd-object-merge": "0.0.2",
+    "js-yaml": "^4.1.0",
     "log4js": "^6.3.0",
     "mongoose": "^5.12.7"
   },
