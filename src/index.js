@@ -1,7 +1,7 @@
 const hapi = require('@hapi/hapi');
 
 const registerRoutes = require('./libs/server/register-routes');
-const { connect } = require('./utils/mongodb');
+const registerGlobal = require('./libs/server/register-global');
 
 const start = async () => {
   // 设置主进程名称
@@ -11,7 +11,7 @@ const start = async () => {
   const server = hapi.server({ port: 3000 });
 
   // 全局变量注册
-  global.client = await connect();
+  registerGlobal(global);
 
   // 注册路由
   registerRoutes(server);
