@@ -5,10 +5,10 @@ const config = require('../../libs/server/config');
 const model = require('../../models');
 
 /**
- * 连接mongodb
+ * 连接mongodb，获取mongo客户端实例
  * @returns
  */
-async function connect () {
+async function createMongoClient () {
   const processName = process.env.proc_name || process.pid;
 
   try {
@@ -47,7 +47,4 @@ async function connect () {
   }
 }
 
-module.exports = {
-  connect,
-  model,
-};
+module.exports = createMongoClient;

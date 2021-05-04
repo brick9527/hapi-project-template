@@ -26,9 +26,6 @@ const logConfig = {
       layout: STDOUT_LAYOUT,
     },
 
-    /**
-     * server日志
-     */
     // server-debug级别日志
     debug: {
       type: 'dateFile',
