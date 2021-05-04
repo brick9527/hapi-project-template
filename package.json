@@ -1,7 +1,7 @@
 {
-  "name": "netease-yunxin-server",
+  "name": "hapi-project-template",
   "version": "0.1.0",
-  "description": "netease yunxin project server",
+  "description": "hapi project template",
   "main": "src/index.js",
   "scripts": {
     "test": "test",
@@ -9,11 +9,7 @@
     "lint": "node_modules/.bin/eslint src",
     "prepare": "node_modules/.bin/husky install"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://gitee.com/fd214333890/netease-yunxin-server.git"
-  },
-  "author": "fand",
+  "author": "brick9527",
   "license": "MIT",
   "dependencies": {
     "@hapi/hapi": "^20.1.2",
