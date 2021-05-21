@@ -13,15 +13,17 @@ async function createMongoClient () {
 
   try {
     const { mongodb } = config;
-    const { user, password, host, port = 27017, db, autoReconnect = true, reconnectTries = 10, reconnectInterval = 1000, poolSize = 600 } = mongodb;
+    const { user, password, host, port, db, autoReconnect, reconnectTries, reconnectInterval, poolSize, hasAuthDB } = mongodb;
 
-    const client = await mongoose.connect(`mongodb://${host}:${port}/${db}`, {
+    const mongoUrl = hasAuthDB ? `mongodb://${host}:${port}/${db}` : `mongodb://${host}:${port}`;
+    const client = await mongoose.connect(mongoUrl, {
       user,
       pass: password,
       autoReconnect,
       poolSize,
       reconnectTries,
       reconnectInterval,
+      useNewUrlParser: true,
     });
 
     const { connection } = client;

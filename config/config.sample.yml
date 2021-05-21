@@ -1,3 +1,9 @@
+# server配置
+server:
+  port: 3000 # 端口
+  jwtSecret: 'your_secret' # jwt加密/解密的秘钥
+  passwordSalt: 'your_salt' # 用户密码加密的盐值
+
 # mongo配置
 mongodb:
   host: '127.0.0.1' # 主机
@@ -9,6 +15,7 @@ mongodb:
   reconnectTries: 10 # 最大重连数
   reconnectInterval: 1000 # 重连间隙（毫秒）
   poolSize: 600 # 连接池数量
+  hasAuthDB: true # 是否有认证的DB
 
 # redis配置
 reids:
