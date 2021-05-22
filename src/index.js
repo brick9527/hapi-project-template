@@ -1,11 +1,11 @@
 const hapi = require('@hapi/hapi');
 const Joi = require('joi');
+const { isBoom } = require('@hapi/boom');
 
-const registerRoutes = require('./libs/server/register-routes');
-const registerPlugins = require('./libs/server/register_plugins');
-const registerGlobal = require('./libs/server/register-global');
-const logger = require('./utils/log4js').getLogger('server');
 const config = require('./libs/server/config');
+const registerPlugins = require('./libs/server/register_plugins');
+const registerGlobal = require('./libs/server/register_global');
+const logger = require('./utils/log4js').getLogger('server');
 
 const start = async () => {
   // 设置主进程名称
@@ -22,9 +22,6 @@ const start = async () => {
 
   // 注册组件
   await registerPlugins(server);
-
-  // 注册路由
-  registerRoutes(server);
 
   // 启动服务
   await server.start();

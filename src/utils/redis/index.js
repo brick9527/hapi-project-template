@@ -1,8 +1,7 @@
 const redis = require('redis');
 const { promisify } = require('util');
 
-const { config } = require('../../libs/server/config');
-const { redis: redisConfig } = config;
+const { redis: redisConfig } = require('../../libs/server/config');
 const logger = require('../../utils/log4js').getLogger('redis');
 
 const processName = process.env.proc_name || process.pid;

@@ -31,7 +31,7 @@ function getDefaultConfig () {
   const defaultConfig = objectMerge(localConfig, sampleConfig);
   // 覆盖本地配置为最新配置
   const localConfigPath = path.join(__dirname, '../../../', CONFIG_PATH);
-  fs.writeFile(localConfigPath, dump(defaultConfig), { encoding: 'utf-8', flag: 'w' }, (err) => {
+  fs.writeFile(localConfigPath, dump(defaultConfig), { encoding: 'utf-8', flag: 'w+' }, (err) => {
     if (err) {
       logger.warn('写入本地配置文件错误。', err);
     }

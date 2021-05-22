@@ -1,11 +1,8 @@
-const userRoutePlugin = require('../../plugins/route/user');
+const userRoutePlugin = require('../../plugins/routes/user');
 
 module.exports = async function (server) {
   // 注册用户模块路由
   await server.register(userRoutePlugin, { routes: { prefix: '/api/user' } });
-
-  // 注册系统模块路由
-  await server.register(systemRoutePlugin, { routes: { prefix: '/api/system' } });
 
   // 404处理
   server.route({
